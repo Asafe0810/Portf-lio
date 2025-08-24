@@ -1,0 +1,289 @@
+/* Estilos Gerais */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    padding-top: 70px; /* Espaço para a navbar fixa */
+    line-height: 1.6;
+}
+
+/* Seções */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--secondary-color) !important;
+}
+
+.nav-link {
+    color: var(--dark-color) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Seção Hero */
+.hero-section {
+    min-height: 90vh;
+    background-color: var(--light-color);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.text-highlight {
+    color: var(--primary-color);
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Seção Sobre */
+.about-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.interest-list {
+    list-style: none;
+    padding: 0;
+}
+
+.interest-list li {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.interest-list li:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
+}
+
+.interest-list i {
+    width: 20px;
+    text-align: center;
+}
+
+.badge {
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-3px);
+}
+
+/* Seção Habilidades */
+.skill-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Cores para ícones de habilidades */
+.lang-color {
+    color: #4285F4;
+}
+
+.dev-color {
+    color: #0F9D58;
+}
+
+.sport-color {
+    color: #DB4437;
+}
+
+.book-color {
+    color: #F4B400;
+}
+
+.film-color {
+    color: #9E9E9E;
+}
+
+.art-color {
+    color: #AB47BC;
+}
+
+.team-color {
+    color: #26A69A;
+}
+
+.think-color {
+    color: #5C6BC0;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--secondary-color);
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.social-links i {
+    line-height: 1;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .profile-img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .about-content, .about-details {
+        text-align: left;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .interest-list li {
+        font-size: 0.9rem;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        margin-left: 8px;
+    }
+    
+    .social-links i {
+        font-size: 1rem;
+    }
+}
